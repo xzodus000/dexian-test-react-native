@@ -1,8 +1,7 @@
-// screens/QuestionScreen.tsx
 import React, { useState, useEffect } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { shuffleArray } from "../utils";
-// Update the path accordingly
+
 import { Question } from "../models/Question";
 import { initialQuestions } from "../data/questionsData";
 
@@ -11,7 +10,6 @@ const QuestionScreen: React.FC<any> = ({ navigation }) => {
   const [score, setScore] = useState(0);
   const [questions, setQuestions] = useState<any[]>(initialQuestions);
 
-  // Shuffle questions and choices whenever the component renders
   useEffect(() => {
     const shuffledQuestions = initialQuestions.map((question: any) => ({
       ...question,
@@ -27,11 +25,9 @@ const QuestionScreen: React.FC<any> = ({ navigation }) => {
       setScore(score + 1);
     }
 
-    // Move to the next question
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      // End of the quiz, navigate to the leaderboard screen
       navigation.navigate("Leaderboard", { score });
     }
   };
