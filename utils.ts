@@ -1,4 +1,3 @@
-// utils.ts
 export const shuffleArray = (array: any[]) => {
   const shuffledArray = array.slice();
   for (let i = shuffledArray.length - 1; i > 0; i--) {

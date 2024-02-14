@@ -1,4 +1,3 @@
-// screens/LeaderboardScreen.tsx
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -6,16 +5,13 @@ const leaderboardData = [
   { name: "Player 1", score: 10 },
   { name: "Player 2", score: 8 },
   { name: "Player 3", score: 12 },
-  // Add more player data as needed
 ];
 
 const LeaderboardScreen: React.FC<any> = ({ route }) => {
   const { score } = route.params;
 
-  // Add the current player's score to the leaderboard
   leaderboardData.push({ name: "You", score });
 
-  // Sort the leaderboard based on scores in descending order
   leaderboardData.sort((a, b) => b.score - a.score);
 
   return (
